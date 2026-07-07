@@ -7,3 +7,5 @@ pydantic-settings
 python-dotenv
 email-validator
 alembic
+pytest-cov
+pytest
