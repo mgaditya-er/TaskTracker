@@ -1,0 +1,15 @@
+FROM python:3.12.10-slim-bookworm
+
+WORKDIR /app
+
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
+
+COPY app ./app
+COPY tests ./tests
+COPY pytest.ini* ./
+ENV DATABASE_URL=sqlite:///./test.db \
+    APP_PORT=8000 \
+    LOG_LEVEL=INFO
+
+RUN python -m pytest -v
