@@ -4,9 +4,16 @@
 
 TaskTracker uses GitHub Actions to automate testing, coverage reporting, and Docker image publishing. The workflow runs on pushes to the configured development and feature branches, as well as on pull requests.
 
+The pipeline executes automatically on:
+
+- Pushes to feature branches
+- Pushes to `develop`
+- Pushes to `main`
+- Pull requests targeting the integration branches
 ---
 
 ## Pipeline Stages
+
 
 ### 1. Checkout
 
