@@ -9,3 +9,4 @@ htmlcov
 .env
 docs
 *.pyc
+!tests/
