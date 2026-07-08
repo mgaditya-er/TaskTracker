@@ -1,17 +1,18 @@
 # TaskTracker Backend
 
-TaskTracker is a FastAPI-based backend application for managing users and tasks.
+TaskTracker is a production-ready backend API built with FastAPI for managing users and tasks, featuring automated testing, containerization, and CI/CD.
 
 ---
 
 ## Tech Stack
 
-- FastAPI
-- PostgreSQL
-- SQLAlchemy
-- Pytest
-- Docker (Upcoming)
-- Kubernetes (Upcoming)
+* FastAPI
+* PostgreSQL
+* SQLAlchemy
+* Alembic
+* Pytest & pytest-cov
+* Docker & Docker Compose
+* GitHub Actions
 
 ---
 
@@ -19,25 +20,28 @@ TaskTracker is a FastAPI-based backend application for managing users and tasks.
 
 ### Users
 
-- Create User
-- Get All Users
-- Get User By ID
-- Duplicate Email Validation
+* Create and retrieve users
+* Email uniqueness validation
 
 ### Tasks
 
-- Create Task
-- Get All Tasks
-- Get Task By ID
-- Update Task
-- Delete Task
-- Owner Validation
-- Status Validation
+* Create, retrieve, update, and delete tasks
+* Filter tasks by owner and status
+* Input and ownership validation
 
-### Health Checks
+### Health Endpoints
 
-- /healthz
-- /readyz
+* `/healthz`
+* `/readyz`
+
+---
+
+## DevOps Highlights
+
+* Multi-stage Docker image running as a non-root user
+* Docker Compose setup with PostgreSQL health checks
+* Automated testing and coverage reporting via GitHub Actions
+* Automatic Docker Hub image publishing after successful CI
 
 ---
 
@@ -55,3 +59,5 @@ app/
 
 tests/
 docs/
+.github/workflows/
+```
