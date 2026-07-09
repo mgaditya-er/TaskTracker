@@ -1,4 +1,3 @@
-import pytest
 
 def create_user(client):
     response = client.post(

@@ -40,8 +40,6 @@ if config.config_file_name is not None:
 # target_metadata = None 
 # replacing with the actual metadata from models
 from app.db.base import Base
-from app.models.user import User
-from app.models.task import Task
 
 target_metadata = Base.metadata
 
