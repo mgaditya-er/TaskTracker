@@ -52,8 +52,12 @@ jobs:
       - name: Run tests
         run: python -m pytest -v
 
-      - name: Generate coverage report
-        run: python -m pytest --cov=app --cov-report=term-missing
+      - name: Lint with Ruff
+        run: ruff check .
+
+      - name: Run tests with coverage gate
+        run: python -m pytest --cov=app --cov-report=term-missing --cov-fail-under=80
+
 
   publish:
     if: github.event_name == 'push' &&  (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/dev')
