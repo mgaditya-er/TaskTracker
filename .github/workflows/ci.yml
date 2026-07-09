@@ -57,9 +57,7 @@ jobs:
 
       - name: Run tests with coverage gate
         run: python -m pytest --cov=app --cov-report=term-missing --cov-fail-under=80
-        
-      - name: Generate coverage report
-        run: python -m pytest --cov=app --cov-report=term-missing
+
 
   publish:
     if: github.event_name == 'push' &&  (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/dev')
